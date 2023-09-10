@@ -1,7 +1,7 @@
 import { Model, DataTypes, CreationOptional } from "sequelize";
 import { sequelize } from "../config/database";
 
-export default class Person extends Model {
+export class Person extends Model {
   declare id: number;
   declare name: string;
   declare age: string;
@@ -22,11 +22,11 @@ Person.init(
       allowNull: false,
     },
     age: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     email: {
       type: DataTypes.STRING,
     },
   },
-  { sequelize, tableName: "person" }
+  { sequelize, underscored: true, tableName: "person" }
 );
