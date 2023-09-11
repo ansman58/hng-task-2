@@ -1,8 +1,9 @@
 import dotenv from "dotenv";
+import { EnvTypes } from "../interface/envTypes";
 
 dotenv.config();
 
-export function getEnv(env: string) {
+export function getEnv(env: EnvTypes) {
   return process.env[env] || "";
 }
 
