@@ -13,7 +13,7 @@ const {
   INTERNAL_SERVER_ERROR,
 } = HTTP_STATUS_CODES;
 
-export class PersonController {
+export class UserController {
   static async store(req: Request, res: Response) {
     const { name } = req.body;
 

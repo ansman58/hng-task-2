@@ -1,12 +1,12 @@
-import { PersonController } from "../controllers/Person";
+import { UserController } from "../controllers/UserController";
 import express from "express";
 
 const router = express.Router();
 
-router.get("/", PersonController.index);
-router.post("/", PersonController.store);
-router.get("/:id", PersonController.show);
-router.patch("/:id", PersonController.update);
-router.delete("/:id", PersonController.destroy);
+router.get("/", UserController.index);
+router.post("/", UserController.store);
+router.get("/:id", UserController.show);
+router.patch("/:id", UserController.update);
+router.delete("/:id", UserController.destroy);
 
 export default router;
