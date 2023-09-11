@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import { getEnv } from "./app/utils/general";
-import { PersonCotroller } from "./app/controllers/Person";
+import router from "./app/routes/person";
 
 const app = express();
 
@@ -12,9 +12,8 @@ app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
 });
 
-app.post('/api', PersonCotroller.store)
+app.use("/api", router);
 
 app.listen(port, () => {
   console.log(`Server running on port http://localhost:${port}`);
 });
-  
