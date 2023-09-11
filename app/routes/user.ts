@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.get("/", UserController.index);
 router.post("/", UserController.store);
-router.get("/:id", UserController.show);
-router.patch("/:id", UserController.update);
-router.delete("/:id", UserController.destroy);
+router.get("/:user_id", UserController.show);
+router.patch("/:user_id", UserController.update);
+router.delete("/:user_id", UserController.destroy);
 
 export default router;

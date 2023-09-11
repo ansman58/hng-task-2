@@ -12,11 +12,11 @@ export class UserController {
     const { name } = req.body;
 
     if (!name) {
-      return res.status(BAD_REQUEST).json({ message: "Name is required" });
+      return res.status(BAD_REQUEST).json({ error: "Name is required" });
     }
 
     if (!isAString(name)) {
-      return res.status(BAD_REQUEST).json({ message: "Name must be a string" });
+      return res.status(BAD_REQUEST).json({ error: "Name must be a string" });
     }
 
     try {
@@ -25,7 +25,7 @@ export class UserController {
       const findUser = await userModel.findOneBy({ name });
 
       if (findUser) {
-        return res.status(BAD_REQUEST).json({ message: "Name already exists" });
+        return res.status(BAD_REQUEST).json({ error: "Name already exists" });
       }
 
       const user = new User();
@@ -53,9 +53,9 @@ export class UserController {
 
   static async show(req: Request, res: Response) {
     try {
-      const { id } = req.params;
+      const { user_id } = req.params;
       const userModel = AppDataSource.getRepository(User);
-      const user = await userModel.findOneBy({ id: Number(id) });
+      const user = await userModel.findOneBy({ userId: Number(user_id) });
       if (!user) {
         return res.status(NOT_FOUND).json({ message: "User not found" });
       }
@@ -67,11 +67,13 @@ export class UserController {
 
   static async update(req: Request, res: Response) {
     try {
-      const { id } = req.params;
+      const { user_id } = req.params;
       const userModel = AppDataSource.getRepository(User);
-      const userToUpdate = await userModel.findOneBy({ id: Number(id) });
+      const userToUpdate = await userModel.findOneBy({
+        userId: Number(user_id),
+      });
       if (!userToUpdate) {
-        return res.status(NOT_FOUND).json({ message: "User not found" });
+        return res.status(NOT_FOUND).json({ error: "User not found" });
       }
       userToUpdate.name = req.body.name;
 
@@ -85,12 +87,14 @@ export class UserController {
 
   static async destroy(req: Request, res: Response) {
     try {
-      const { id } = req.params;
+      const { user_id } = req.params;
       const userModel = AppDataSource.getRepository(User);
-      const userToRemove = await userModel.findOneBy({ id: Number(id) });
+      const userToRemove = await userModel.findOneBy({
+        userId: Number(user_id),
+      });
 
       if (!userToRemove) {
-        return res.status(NOT_FOUND).json({ message: "User not found" });
+        return res.status(NOT_FOUND).json({ error: "User not found" });
       }
       userModel.remove(userToRemove);
       res.status(OK).json({ message: "User deleted successfully" });
