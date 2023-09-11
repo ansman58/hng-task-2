@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { HTTP_STATUS_CODES } from "../constants";
-import { AppDataSource } from "../config/database";
+import { AppDataSource } from "../../ormconfig";
 import { User } from "../models/User";
 import { isAString } from "../utils/general";
 
@@ -55,9 +55,9 @@ export class UserController {
     try {
       const { user_id } = req.params;
       const userModel = AppDataSource.getRepository(User);
-      const user = await userModel.findOneBy({ userId: Number(user_id) });
+      const user = await userModel.findOneBy({ user_id: Number(user_id) });
       if (!user) {
-        return res.status(NOT_FOUND).json({ message: "User not found" });
+        return res.status(NOT_FOUND).json({ error: "User not found" });
       }
       res.status(OK).json({ message: "User fetched successfully", user });
     } catch (error) {
@@ -70,7 +70,7 @@ export class UserController {
       const { user_id } = req.params;
       const userModel = AppDataSource.getRepository(User);
       const userToUpdate = await userModel.findOneBy({
-        userId: Number(user_id),
+        user_id: Number(user_id),
       });
       if (!userToUpdate) {
         return res.status(NOT_FOUND).json({ error: "User not found" });
@@ -90,7 +90,7 @@ export class UserController {
       const { user_id } = req.params;
       const userModel = AppDataSource.getRepository(User);
       const userToRemove = await userModel.findOneBy({
-        userId: Number(user_id),
+        user_id: Number(user_id),
       });
 
       if (!userToRemove) {
