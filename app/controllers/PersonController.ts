@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 import { HTTP_STATUS_CODES } from "../constants";
 import { AppDataSource } from "../../ormconfig";
-import { User } from "../models/User";
+import { User } from "../models/Person";
 import { isAString } from "../utils/general";
 
 const { OK, CREATED, ACCEPTED, BAD_REQUEST, NOT_FOUND, INTERNAL_SERVER_ERROR } =
   HTTP_STATUS_CODES;
 
-export class UserController {
+export class PersonController {
   static async store(req: Request, res: Response) {
     const { name } = req.body;
 
@@ -36,7 +36,7 @@ export class UserController {
         .status(CREATED)
         .json({ message: "User created successfully", newUser });
     } catch (error) {
-      UserController.handleServerError(res, error);
+      PersonController.handleServerError(res, error);
     }
   }
 
@@ -47,7 +47,7 @@ export class UserController {
       const users = await getUsers.find();
       res.status(OK).json({ message: "Users fetched successfully", users });
     } catch (error) {
-      UserController.handleServerError(res, error);
+      PersonController.handleServerError(res, error);
     }
   }
 
@@ -61,7 +61,7 @@ export class UserController {
       }
       res.status(OK).json({ message: "User fetched successfully", user });
     } catch (error) {
-      UserController.handleServerError(res, error);
+      PersonController.handleServerError(res, error);
     }
   }
 
@@ -81,7 +81,7 @@ export class UserController {
 
       res.status(ACCEPTED).json({ message: "User updated successfully", user });
     } catch (error) {
-      UserController.handleServerError(res, error);
+      PersonController.handleServerError(res, error);
     }
   }
 
@@ -99,12 +99,12 @@ export class UserController {
       userModel.remove(userToRemove);
       res.status(OK).json({ message: "User deleted successfully" });
     } catch (error) {
-      UserController.handleServerError(res, error);
+      PersonController.handleServerError(res, error);
     }
   }
 
   static handleServerError(res: Response, error: Error) {
-    console.error(`Error in UserController: ${error.message}`);
+    console.error(`Error in PersonController: ${error.message}`);
     return res
       .status(INTERNAL_SERVER_ERROR)
       .json({ message: "Internal server error" });

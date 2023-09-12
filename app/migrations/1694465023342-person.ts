@@ -17,20 +17,20 @@ export class User1694465023342 implements MigrationInterface {
             name: "name",
             type: "varchar",
             isNullable: false,
+            isUnique: true,
           },
           {
             name: "created_at",
             type: "timestamp",
             isNullable: false,
             default: "CURRENT_TIMESTAMP",
-
           },
           {
             name: "updated_at",
             type: "timestamp",
             isNullable: false,
             default: "CURRENT_TIMESTAMP",
-          }
+          },
         ],
       }),
       true

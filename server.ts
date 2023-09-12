@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import { getEnv } from "./app/utils/general";
-import router from "./app/routes/user";
+import router from "./app/routes/person";
 
 const app = express();
 
