@@ -27,6 +27,10 @@ Before you begin, ensure you have met the following requirements:
 
 1. Clone the repository:
 
+```
+git clone https://github.com/ansman58/hng-task-2.git
+```
+
 ### Install dependencies:
 npm install
 
@@ -43,14 +47,13 @@ DB_HOST =
 ### Start the server:
 pnpm start
 
-### Usage
-- API Endpoints
+### Usage (API Endpoints)
 
-`GET /api: Get a list of all people.` 
-`POST /api: Create a new person.`
-`GET /api/:user_id: Get a single person by their ID.`
-`PATCH /api/:user_id: Update a person by their ID.`
-`DELETE /api/:user_id: Delete a person by their ID.`
+* `GET /api: Get a list of all people.` 
+* `POST /api: Create a new person.`
+* `GET /api/:user_id: Get a single person by their ID.`
+* `PATCH /api/:user_id: Update a person by their ID.`
+* `DELETE /api/:user_id: Delete a person by their ID.`
 
 Examples:
 ### To create a new person, make a POST request to:
