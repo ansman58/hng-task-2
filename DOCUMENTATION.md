@@ -133,7 +133,7 @@ Operations of the CRUD endpoints for the application are described below
 
 ## Update Person
 
-**Endpoint:** `PUT | http://localhost:3120/api/:user_id`
+**Endpoint:** `PATCH | http://localhost:3120/api/:user_id`
 
 - **Description:** Updates a person's information in the database.
 - **Returns:**
