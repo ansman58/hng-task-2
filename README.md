@@ -32,7 +32,16 @@ git clone https://github.com/ansman58/hng-task-2.git
 ```
 
 ### Install dependencies:
+```
 npm install
+```
+```
+yarn install
+```
+```
+pnpm install
+```
+
 
 - Create a .env file in the project root directory with your MySql database connection details:
 
@@ -45,7 +54,16 @@ DB_HOST =
 
 
 ### Start the server:
-pnpm start
+```
+npm dev
+```
+```
+yarn dev
+```
+```
+pnpm dev
+```
+
 
 ### Usage (API Endpoints)
 
