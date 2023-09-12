@@ -45,37 +45,39 @@ pnpm start
 
 ### Usage
 - API Endpoints
-GET /api: Get a list of all people.
-POST /api: Create a new person.
-GET /api/:user_id: Get a single person by their ID.
-PATCH /api/:user_id: Update a person by their ID.
-DELETE /api/:user_id: Delete a person by their ID.
+
+`GET /api: Get a list of all people.` 
+`POST /api: Create a new person.`
+`GET /api/:user_id: Get a single person by their ID.`
+`PATCH /api/:user_id: Update a person by their ID.`
+`DELETE /api/:user_id: Delete a person by their ID.`
 
 Examples:
 ### To create a new person, make a POST request to:
-- http://localhost:3120/api
+- `http://localhost:3120/api`
 ### Request Body:
-json
+```json
 {
   "name": "John Doe"
 }
+```
 
 ### To get a person by ID, make a GET request to:
-http://localhost:3120/api/1
+`http://localhost:3120/api/1`
 
 
 ### To update a person by ID, make a PATCH request to:
-http://localhost:3120/api/2
+`http://localhost:3120/api/2`
 
 ### Request Body:
-json
+```json
 {
   "name": "Updated Name"
 }
-
+```
 
 ### To delete a person by ID, make a DELETE request to:
-http://localhost:3120/api/1
+`http://localhost:3120/api/1`
 
 
 ### Error Handling
