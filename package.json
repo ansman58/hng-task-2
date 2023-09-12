@@ -8,7 +8,10 @@
   "scripts": {
     "build": " tsc",
     "start": "node ./build/server.js",
-    "dev": "nodemon ./server.ts"
+    "dev": "nodemon ./server.ts",
+    "typeorm": "typeorm-ts-node-commonjs -d ./ormconfig.ts",
+    "migration:up": "typeorm-ts-node-commonjs -d ./ormconfig.ts migration:run",
+    "migration:down": "typeorm-ts-node-commonjs -d ./ormconfig.ts migration:revert"
   },
   "dependencies": {
     "dotenv": "^16.3.1",

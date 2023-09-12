@@ -12,9 +12,8 @@ export const AppDataSource = new DataSource({
   logging: false,
   migrations: ["app/migrations/*.ts"],
   migrationsTableName: "typeorm-schema",
-  migrationsRun: true,  
-  synchronize: true,
-  
+  migrationsRun: true,
+  synchronize: false,
 });
 
 (async () => {
