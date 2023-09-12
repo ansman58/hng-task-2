@@ -31,10 +31,13 @@ Before you begin, ensure you have met the following requirements:
 npm install
 
 - Create a .env file in the project root directory with your MySql database connection details:
+
+```
 DB_USER = 
 DB_PASSWORD = 
 DB_NAME = 
 DB_HOST = 
+```
 
 
 ### Start the server:
