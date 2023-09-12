@@ -9,8 +9,8 @@
     "build": "npx tsc",
     "start": "node ./build/server.js",
     "dev": "nodemon ./server.ts",
-    "typeorm": "typeorm-ts-node-commonjs",
-    "migration:run": "typeorm migration:run -d ormconfig.ts"
+    "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
+    "typeorm:run": "typeorm migration:run"
   },
   "dependencies": {
     "dotenv": "^16.3.1",
