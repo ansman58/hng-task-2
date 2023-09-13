@@ -7,15 +7,21 @@ A simple Express.js REST API for managing people. This project demonstrates basi
 ## Table of Contents
 
 - [Getting Started](#getting-started)
+  - [Live url](#live-url)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
+- [Postman Collection](#postman-collection)
 - [Usage](#usage)
   - [API Endpoints](#api-endpoints)
 - [Error Handling](#error-handling)
 
+
 ## Getting Started
 
-### Prerequisites
+## Live Url
+`https://hngx-task-two-uzvn.onrender.com/api`
+
+## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
@@ -23,7 +29,7 @@ Before you begin, ensure you have met the following requirements:
 - MySql2 installed and running
 - Postman or a similar tool for testing the API
 
-### Installation
+## Installation
 
 1. Clone the repository:
 
@@ -31,17 +37,11 @@ Before you begin, ensure you have met the following requirements:
 git clone https://github.com/ansman58/hng-task-2.git
 ```
 
-### Install dependencies:
-```
-npm install
-```
+## Install dependencies:
+
 ```
 yarn install
 ```
-```
-pnpm install
-```
-
 
 - Create a .env file in the project root directory with your MySql database connection details:
 
@@ -52,20 +52,17 @@ DB_NAME =
 DB_HOST = 
 ```
 
+## Postman Collection
+`https://documenter.getpostman.com/view/29520347/2s9YC4VszN`
 
-### Start the server:
-```
-npm dev
-```
+## Start the server:
+
 ```
 yarn dev
 ```
-```
-pnpm dev
-```
 
 
-### Usage (API Endpoints)
+## Usage (API Endpoints)
 
 * `GET /api: Get a list of all people.` 
 * `POST /api: Create a new person.`
@@ -74,32 +71,32 @@ pnpm dev
 * `DELETE /api/:user_id: Delete a person by their ID.`
 
 Examples:
-### To create a new person, make a POST request to:
+## To create a new person, make a POST request to:
 - `http://localhost:3120/api`
-### Request Body:
+## Request Body:
 ```json
 {
   "name": "John Doe"
 }
 ```
 
-### To get a person by ID, make a GET request to:
+## To get a person by ID, make a GET request to:
 `http://localhost:3120/api/1`
 
 
-### To update a person by ID, make a PATCH request to:
+## To update a person by ID, make a PATCH request to:
 `http://localhost:3120/api/2`
 
-### Request Body:
+## Request Body:
 ```json
 {
   "name": "Updated Name"
 }
 ```
 
-### To delete a person by ID, make a DELETE request to:
+## To delete a person by ID, make a DELETE request to:
 `http://localhost:3120/api/1`
 
 
-### Error Handling
+## Error Handling
 The API handles errors gracefully. It provides meaningful error messages and status codes for various scenarios, including invalid requests and resource not found.
