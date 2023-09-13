@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { HTTP_STATUS_CODES } from "../constants";
 import { AppDataSource } from "../../ormconfig";
-import { User } from "../models/Person";
+import { Users } from "../models/Person";
 import { isAString } from "../utils/general";
 
 const { OK, CREATED, ACCEPTED, BAD_REQUEST, NOT_FOUND, INTERNAL_SERVER_ERROR } =
@@ -20,7 +20,7 @@ export class PersonController {
     }
 
     try {
-      const userModel = AppDataSource.getRepository(User);
+      const userModel = AppDataSource.getRepository(Users);
 
       const findUser = await userModel.findOneBy({ name });
 
@@ -28,9 +28,9 @@ export class PersonController {
         return res.status(BAD_REQUEST).json({ error: "Name already exists" });
       }
 
-      const user = new User();
-      user.name = name;
-      const newUser = await userModel.save(user);
+      const users = new Users();
+      users.name = name;
+      const newUser = await userModel.save(users);
 
       res
         .status(CREATED)
@@ -42,7 +42,7 @@ export class PersonController {
 
   static async index(req: Request, res: Response) {
     try {
-      const getUsers = AppDataSource.getRepository(User);
+      const getUsers = AppDataSource.getRepository(Users);
 
       const users = await getUsers.find();
       res.status(OK).json({ message: "Users fetched successfully", users });
@@ -54,7 +54,7 @@ export class PersonController {
   static async show(req: Request, res: Response) {
     try {
       const { user_id } = req.params;
-      const userModel = AppDataSource.getRepository(User);
+      const userModel = AppDataSource.getRepository(Users);
       const user = await userModel.findOneBy({ user_id: Number(user_id) });
       if (!user) {
         return res.status(NOT_FOUND).json({ error: "User not found" });
@@ -68,7 +68,7 @@ export class PersonController {
   static async update(req: Request, res: Response) {
     try {
       const { user_id } = req.params;
-      const userModel = AppDataSource.getRepository(User);
+      const userModel = AppDataSource.getRepository(Users);
       const userToUpdate = await userModel.findOneBy({
         user_id: Number(user_id),
       });
@@ -88,7 +88,7 @@ export class PersonController {
   static async destroy(req: Request, res: Response) {
     try {
       const { user_id } = req.params;
-      const userModel = AppDataSource.getRepository(User);
+      const userModel = AppDataSource.getRepository(Users);
       const userToRemove = await userModel.findOneBy({
         user_id: Number(user_id),
       });
