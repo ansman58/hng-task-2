@@ -1,7 +1,5 @@
 # HNG-TASK-2
 
-# REST API
-
 A simple Express.js REST API for managing people. This project demonstrates basic CRUD operations and error handling in a Node.js application.
 
 ## Table of Contents
