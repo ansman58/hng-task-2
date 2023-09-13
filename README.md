@@ -13,11 +13,11 @@ A simple Express.js REST API for managing people. This project demonstrates basi
   - [API Endpoints](#api-endpoints)
 - [Error Handling](#error-handling)
 
-
 ## Getting Started
 
 ## Live Url
-`https://hngx-task-two-uzvn.onrender.com/api`
+
+[Go to live url](#https://hngx-task-two-uzvn.onrender.com/api)
 
 ## Prerequisites
 
@@ -44,14 +44,15 @@ yarn install
 - Create a .env file in the project root directory with your MySql database connection details:
 
 ```
-DB_USER = 
-DB_PASSWORD = 
-DB_NAME = 
-DB_HOST = 
+DB_USER =
+DB_PASSWORD =
+DB_NAME =
+DB_HOST =
 ```
 
 ## Postman Collection
-`https://documenter.getpostman.com/view/29520347/2s9YC4VszN`
+
+[Go to postman collection](#https://documenter.getpostman.com/view/29520347/2s9YC4VszN)
 
 ## Start the server:
 
@@ -59,19 +60,22 @@ DB_HOST =
 yarn dev
 ```
 
-
 ## Usage (API Endpoints)
 
-* `GET /api: Get a list of all people.` 
-* `POST /api: Create a new person.`
-* `GET /api/:user_id: Get a single person by their ID.`
-* `PATCH /api/:user_id: Update a person by their ID.`
-* `DELETE /api/:user_id: Delete a person by their ID.`
+- `GET /api: Get a list of all people.`
+- `POST /api: Create a new person.`
+- `GET /api/:user_id: Get a single person by their ID.`
+- `PATCH /api/:user_id: Update a person by their ID.`
+- `DELETE /api/:user_id: Delete a person by their ID.`
 
 Examples:
+
 ## To create a new person, make a POST request to:
-- `http://localhost:3120/api`
+
+- `https://hngx-task-two-uzvn.onrender.com/api`
+
 ## Request Body:
+
 ```json
 {
   "name": "John Doe"
@@ -79,13 +83,15 @@ Examples:
 ```
 
 ## To get a person by ID, make a GET request to:
-`http://localhost:3120/api/1`
 
+`https://hngx-task-two-uzvn.onrender.com/api/1`
 
 ## To update a person by ID, make a PATCH request to:
-`http://localhost:3120/api/2`
+
+`https://hngx-task-two-uzvn.onrender.com/api/2`
 
 ## Request Body:
+
 ```json
 {
   "name": "Updated Name"
@@ -93,8 +99,9 @@ Examples:
 ```
 
 ## To delete a person by ID, make a DELETE request to:
-`http://localhost:3120/api/1`
 
+`https://hngx-task-two-uzvn.onrender.com/api/1`
 
 ## Error Handling
+
 The API handles errors gracefully. It provides meaningful error messages and status codes for various scenarios, including invalid requests and resource not found.

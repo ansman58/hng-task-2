@@ -36,7 +36,7 @@ Operations of the CRUD endpoints for the application are described below
 
 ## Create Person
 
-**Endpoint:** `POST | http://localhost:3120/api`
+**Endpoint:** `POST | https://hngx-task-two-uzvn.onrender.com/api`
 
 - **Description:** Creates a new person in the database.
 - **Returns:**
@@ -70,7 +70,7 @@ Operations of the CRUD endpoints for the application are described below
 
 ## Get All Persons
 
-**Endpoint:** `GET | http://localhost:3120/api`
+**Endpoint:** `GET | https://hngx-task-two-uzvn.onrender.com/api`
 
 - **Description:** Fetches all persons from the database.
 - **Returns:**
@@ -108,7 +108,7 @@ Operations of the CRUD endpoints for the application are described below
 
 ## Get Person by ID
 
-**Endpoint:** `GET | http://localhost:3120/api/:user_id`
+**Endpoint:** `GET | https://hngx-task-two-uzvn.onrender.com/api/:user_id`
 
 - **Description:** Fetches a person by their ID from the database.
 - **Returns:**
@@ -133,7 +133,7 @@ Operations of the CRUD endpoints for the application are described below
 
 ## Update Person
 
-**Endpoint:** `PATCH | http://localhost:3120/api/:user_id`
+**Endpoint:** `PATCH | https://hngx-task-two-uzvn.onrender.com/api/:user_id`
 
 - **Description:** Updates a person's information in the database.
 - **Returns:**
@@ -167,7 +167,7 @@ Operations of the CRUD endpoints for the application are described below
 
 ## Delete Person
 
-**Endpoint:** `DELETE | http://localhost:3120/api/:user_id`
+**Endpoint:** `DELETE | https://hngx-task-two-uzvn.onrender.com/api/:user_id`
 
 - **Description:** Deletes one person from the database.
 - **Returns:**
