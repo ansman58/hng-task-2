@@ -17,7 +17,7 @@ A simple Express.js REST API for managing people. This project demonstrates basi
 
 ## Live Url
 
-[Go to live url](#https://hngx-task-two-uzvn.onrender.com/api)
+[Go to live url](https://hngx-task-two-uzvn.onrender.com/api)
 
 ## Prerequisites
 
@@ -52,7 +52,7 @@ DB_HOST =
 
 ## Postman Collection
 
-[Go to postman collection](#https://documenter.getpostman.com/view/29520347/2s9YC4VszN)
+[Go to postman collection](https://documenter.getpostman.com/view/29520347/2s9YC4VszN)
 
 ## Start the server:
 
