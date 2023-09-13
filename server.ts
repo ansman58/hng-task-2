@@ -14,6 +14,6 @@ app.get("/", (req: Request, res: Response) => {
 
 app.use("/api", router);
 
-app.listen(port, () => {
+app.listen(Number(port), "0.0.0.0", () => {
   console.log(`Server running on port http://localhost:${port}`);
 });
